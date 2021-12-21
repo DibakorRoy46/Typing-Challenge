@@ -1,0 +1,28 @@
+<div class="container  row mt-2">
+    <div class="col-md-8 col-sm-12 py-5" style="margin-left: auto;border: 1px solid black;">  
+        <div class="text-center">
+            <h1 class="text-primary">Typing Challenge</h1>
+        </div>
+        <div class="text-center pt-5">
+            <div>
+                <h4>
+                    <span
+                     [class]="compare(letter,enterText[i])" 
+                    *ngFor="let letter of randomText.split('');let i=index"
+                    >{{letter}}</span
+                    >
+                </h4> 
+                <button class="btn btn-success" (click)="getRandomText()">Click for Text</button>
+            </div>
+            <div class="mt-4">
+                <form>
+                    <input class="form-control text-center" #name (input)="onInput($any($event.target).value)"/>
+                </form>
+                
+            </div>
+            <div class="text-center" *ngIf="success">
+                <h1 class="text-success text-uppercase">Success</h1>
+            </div>
+        </div>
+    </div>
+</div>
